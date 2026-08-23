@@ -12,6 +12,7 @@
   <main class="game-shell">
     <header class="mobile-head">
       <div><span>スコア</span><strong id="mobileScore">0</strong></div>
+      <button class="mobile-rank" data-ranking>🏆</button>
       <button class="pause-button" data-pause aria-label="一時停止">Ⅱ</button>
     </header>
 
@@ -24,6 +25,7 @@
         <h2>ネクスト</h2>
         <canvas id="nextCanvas" width="160" height="140"></canvas>
       </section>
+      <button class="wood rank-button" data-ranking>🏆 ランキング</button>
     </aside>
 
     <section class="center-stage">
@@ -43,7 +45,10 @@
           <div class="modal wood"><h2>一時停止</h2><button id="resumeButton">つづける</button><button class="secondary" id="restartFromPause">最初から</button></div>
         </div>
         <div class="overlay" id="gameOverOverlay">
-          <div class="modal wood"><h2>ゲームオーバー</h2><p>スコア <strong id="finalScore">0</strong></p><button id="retryButton">もう一度</button></div>
+          <div class="modal wood"><h2>ゲームオーバー</h2><p>スコア <strong id="finalScore">0</strong></p><input id="playerName" maxlength="8" placeholder="なまえ" value="PLAYER"><button id="saveScoreButton">ランキング登録</button><button class="secondary" id="retryButton">もう一度</button></div>
+        </div>
+        <div class="overlay" id="rankingOverlay">
+          <div class="modal wood"><h2>🏆 みんなのランキング</h2><ol class="ranking-list" id="rankingList"></ol><button id="closeRankingButton">とじる</button></div>
         </div>
       </div>
     </section>
@@ -57,6 +62,6 @@
     </aside>
   </main>
   <footer>非公式のオリジナル・ボクセルパズルゲームです。</footer>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
