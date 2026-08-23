@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#62b8f6">
+  <title>ブロックマージ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="mobile-head">
+      <div><span>スコア</span><strong id="mobileScore">0</strong></div>
+      <button class="pause-button" data-pause aria-label="一時停止">Ⅱ</button>
+    </header>
+
+    <aside class="left-panel">
+      <section class="wood score-card">
+        <span>スコア</span><strong id="score">0000</strong>
+        <small>ベストスコア</small><b id="best">0000</b>
+      </section>
+      <section class="wood next-card">
+        <h2>ネクスト</h2>
+        <canvas id="nextCanvas" width="160" height="140"></canvas>
+      </section>
+    </aside>
+
+    <section class="center-stage">
+      <div class="drop-preview"><canvas id="currentCanvas" width="120" height="100"></canvas></div>
+      <div class="game-box" id="gameBox">
+        <canvas id="gameCanvas"></canvas>
+        <div class="danger-line"><span>ここまで積むとゲームオーバー</span></div>
+        <div class="overlay active" id="startOverlay">
+          <div class="modal wood">
+            <h1>ブロックマージ</h1>
+            <p>同じブロックをくっつけて<br>最高のブロックを作ろう！</p>
+            <button id="startButton">ゲームスタート</button>
+            <small>マウス・指で位置を決めてタップ</small>
+          </div>
+        </div>
+        <div class="overlay" id="pauseOverlay">
+          <div class="modal wood"><h2>一時停止</h2><button id="resumeButton">つづける</button><button class="secondary" id="restartFromPause">最初から</button></div>
+        </div>
+        <div class="overlay" id="gameOverOverlay">
+          <div class="modal wood"><h2>ゲームオーバー</h2><p>スコア <strong id="finalScore">0</strong></p><button id="retryButton">もう一度</button></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right-panel">
+      <button class="pause-button wood" data-pause aria-label="一時停止">Ⅱ</button>
+      <section class="order-card">
+        <h2>ブロックの順番</h2>
+        <ol id="blockOrder"></ol>
+      </section>
+    </aside>
+  </main>
+  <footer>非公式のオリジナル・ボクセルパズルゲームです。</footer>
+  <script src="app.js"></script>
+</body>
+</html>
