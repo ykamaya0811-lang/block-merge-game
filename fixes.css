@@ -1,0 +1,4 @@
+.center-stage{--aim-x:50%}
+.drop-preview{display:block;position:relative}
+.drop-preview:after{left:var(--aim-x);transform:translateX(-50%)}
+.drop-preview canvas{position:absolute;left:var(--aim-x);bottom:0;transform:translateX(-50%)}
